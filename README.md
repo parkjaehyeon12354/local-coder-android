@@ -1,19 +1,19 @@
-# Zako Code (안드로이드)
+# Local Coder (안드로이드)
 
-갤럭시에서 쓰는 Zako Code 입니다. Claude Code 처럼 AI 가 **Termux 에서 명령을 직접 실행**하며 일합니다 — AI 가 명령을 내면 실행할지 묻고, 결과를 보고 다음 명령을 정합니다.
+갤럭시에서 쓰는 Local Coder 입니다. Claude Code 처럼 AI 가 **Termux 에서 명령을 직접 실행**하며 일합니다 — AI 가 명령을 내면 실행할지 묻고, 결과를 보고 다음 명령을 정합니다.
 
-PC 판과 아이폰(iSH 터미널판)은 [zako-code](https://github.com/parkjaehyeon12354/zako-code) 에 있습니다.
+PC 판과 아이폰(iSH 터미널판)은 [local-coder](https://github.com/parkjaehyeon12354/local-coder) 에 있습니다.
 
 ## 설치
 
 1. **Termux** 를 설치합니다. [F-Droid](https://f-droid.org/packages/com.termux/) 나 [GitHub](https://github.com/termux/termux-app/releases) 판을 받으세요.
-2. Termux 를 **한 번 열고**, 아래 한 줄을 붙여넣어 실행합니다. 다른 앱(Zako Code)이 명령을 맡길 수 있게 하는 설정입니다.
+2. Termux 를 **한 번 열고**, 아래 한 줄을 붙여넣어 실행합니다. 다른 앱(Local Coder)이 명령을 맡길 수 있게 하는 설정입니다.
 
    ```
    mkdir -p ~/.termux && echo "allow-external-apps=true" >> ~/.termux/termux.properties && termux-reload-settings
    ```
-3. [릴리스](https://github.com/parkjaehyeon12354/zako-code-android/releases/latest) 에서 `ZakoCode.apk` 를 받아 설치합니다. "출처를 알 수 없는 앱" 허용을 물으면 허용합니다.
-4. Zako Code 왼쪽 위 **☰ → 설정**에서 두 칸을 채웁니다. **둘 다 넣어야 동작합니다.**
+3. [릴리스](https://github.com/parkjaehyeon12354/local-coder-android/releases/latest) 에서 `ZakoCode.apk` 를 받아 설치합니다. "출처를 알 수 없는 앱" 허용을 물으면 허용합니다.
+4. Local Coder 왼쪽 위 **☰ → 설정**에서 두 칸을 채웁니다. **둘 다 넣어야 동작합니다.**
 
    | 칸 | 넣을 것 |
    |---|---|
