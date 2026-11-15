@@ -23,7 +23,7 @@ public class ReleaseTest {
 
     @Test
     public void onlyGithubHttpsIsTrusted() {
-        assertTrue(Release.trusted("https://github.com/a/b/releases/download/v1/ZakoCode.apk"));
+        assertTrue(Release.trusted("https://github.com/a/b/releases/download/v1/LocalCoder.apk"));
         assertTrue(Release.trusted("https://objects.githubusercontent.com/x"));
         assertFalse(Release.trusted("http://github.com/a/b/x.apk"));
         assertFalse(Release.trusted("https://github.com.evil.test/x.apk"));
@@ -35,13 +35,13 @@ public class ReleaseTest {
     static JSONObject release(String tag, String assetUrl, String page) throws Exception {
         return new JSONObject().put("tag_name", tag).put("html_url", page).put("assets", new JSONArray()
                 .put(new JSONObject().put("name", "other.apk").put("browser_download_url", "https://github.com/o"))
-                .put(new JSONObject().put("name", "ZakoCode.apk").put("browser_download_url", assetUrl)));
+                .put(new JSONObject().put("name", "LocalCoder.apk").put("browser_download_url", assetUrl)));
     }
 
     @Test
     public void pickPrefersTheApkThenTheReleasePage() throws Exception {
-        String apk = "https://github.com/parkjaehyeon12354/zako-code-android/releases/download/v9.9.9/ZakoCode.apk";
-        String page = "https://github.com/parkjaehyeon12354/zako-code-android/releases/tag/v9.9.9";
+        String apk = "https://github.com/parkjaehyeon12354/local-coder-android/releases/download/v9.9.9/LocalCoder.apk";
+        String page = "https://github.com/parkjaehyeon12354/local-coder-android/releases/tag/v9.9.9";
         assertArrayEquals(new String[]{"9.9.9", apk}, Release.pick(release("v9.9.9", apk, page), "1.0.3"));
         assertArrayEquals(new String[]{"9.9.9", page}, Release.pick(release("v9.9.9", "http://github.com/x.apk", page), "1.0.3"));
         assertNull(Release.pick(release("v9.9.9", "http://github.com/x.apk", "https://evil.test/r"), "1.0.3"));

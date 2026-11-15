@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
  * 레포가 공개라 인증 없이 읽는다. 안드로이드 API 를 안 써서 JVM 에서 시험한다(ReleaseTest).
  */
 final class Release {
-    static final String LATEST = "https://api.github.com/repos/parkjaehyeon12354/zako-code-android/releases/latest";
+    static final String LATEST = "https://api.github.com/repos/parkjaehyeon12354/local-coder-android/releases/latest";
 
     /** 새 것이 없으면 null, 있으면 {버전, 받을 주소}. */
     static String[] check(String current) throws IOException, JSONException {
@@ -22,7 +22,7 @@ final class Release {
         try {
             c.setConnectTimeout(30_000);
             c.setReadTimeout(30_000);
-            c.setRequestProperty("User-Agent", "ZakoCode");   // 없으면 깃허브가 403 을 준다
+            c.setRequestProperty("User-Agent", "LocalCoder");   // 없으면 깃허브가 403 을 준다
             c.setRequestProperty("Accept", "application/vnd.github+json");
             int code = c.getResponseCode();
             if (code != 200) throw new IOException("HTTP " + code);
@@ -38,7 +38,7 @@ final class Release {
         JSONArray assets = release.optJSONArray("assets");
         for (int i = 0; assets != null && i < assets.length(); i++) {
             JSONObject a = assets.optJSONObject(i);
-            if (a == null || !"ZakoCode.apk".equals(a.optString("name"))) continue;
+            if (a == null || !"LocalCoder.apk".equals(a.optString("name"))) continue;
             String url = a.optString("browser_download_url");
             if (trusted(url)) return new String[]{clean(tag), url};
         }

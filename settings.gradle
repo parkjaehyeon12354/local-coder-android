@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'zako-code-android'
+rootProject.name = 'local-coder-android'
 include ':app'

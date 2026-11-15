@@ -62,7 +62,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class MainActivity extends Activity {
-    // PC 판 Zako Code 와 같은 색 (Ui). 회색은 전부 따뜻한 계열로 맞춘다
+    // PC 판 Local Coder 와 같은 색 (Ui). 회색은 전부 따뜻한 계열로 맞춘다
     static final int BG = 0xFF262624, SIDE = 0xFF1F1E1D, CARD = 0xFF30302E, CARD_HI = 0xFF3C3B38, CARD_DN = 0xFF454440,
             LINE = 0xFF3D3C39, FG = 0xFFF2F0E9, USER_FG = 0xFFD4D1C8, MUTED = 0xFF99968E,
             ACCENT = 0xFFD97757, ACCENT_HI = 0xFFE38B6D, ON_ACCENT = 0xFF261107, CODE_BG = 0xFF1A1918;
@@ -819,7 +819,7 @@ public class MainActivity extends Activity {
 
     View sectionAbout() {
         LinearLayout p = vertical();
-        p.addView(strong("Zako Code"));
+        p.addView(strong("Local Coder"));
         p.addView(label("버전 " + BuildConfig.VERSION_NAME, 13, USER_FG), lp(WRAP, WRAP, 0, 6, 0, 0));
         LinearLayout r = row();
         Button check = button("업데이트 확인", CARD, LINE, FG, 8, v -> checkUpdate(true));

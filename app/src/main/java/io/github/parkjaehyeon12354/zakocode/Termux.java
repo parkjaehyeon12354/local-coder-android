@@ -72,7 +72,7 @@ final class Termux implements Agent.Shell {
                     .putExtra("com.termux.RUN_COMMAND_ARGUMENTS", new String[]{"-c", command})
                     .putExtra("com.termux.RUN_COMMAND_WORKDIR", HOME)
                     .putExtra("com.termux.RUN_COMMAND_BACKGROUND", true)
-                    .putExtra("com.termux.RUN_COMMAND_COMMAND_LABEL", "Zako Code")
+                    .putExtra("com.termux.RUN_COMMAND_COMMAND_LABEL", "Local Coder")
                     .putExtra("com.termux.RUN_COMMAND_PENDING_INTENT", pending);
             ComponentName started;
             try {

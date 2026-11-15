@@ -12,7 +12,7 @@ PC 판과 아이폰(iSH 터미널판)은 [local-coder](https://github.com/parkja
    ```
    mkdir -p ~/.termux && echo "allow-external-apps=true" >> ~/.termux/termux.properties && termux-reload-settings
    ```
-3. [릴리스](https://github.com/parkjaehyeon12354/local-coder-android/releases/latest) 에서 `ZakoCode.apk` 를 받아 설치합니다. "출처를 알 수 없는 앱" 허용을 물으면 허용합니다.
+3. [릴리스](https://github.com/parkjaehyeon12354/local-coder-android/releases/latest) 에서 `LocalCoder.apk` 를 받아 설치합니다. "출처를 알 수 없는 앱" 허용을 물으면 허용합니다.
 4. Local Coder 왼쪽 위 **☰ → 설정**에서 두 칸을 채웁니다. **둘 다 넣어야 동작합니다.**
 
    | 칸 | 넣을 것 |

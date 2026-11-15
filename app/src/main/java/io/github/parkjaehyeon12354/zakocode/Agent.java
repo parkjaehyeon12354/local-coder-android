@@ -114,7 +114,7 @@ final class Agent {
 
     static String systemPrompt() {
         return "너는 숙련된 개발자다. 코드는 반드시 언어를 명시한 코드펜스로 감싸고, 설명은 간결하게 한국어로 한다.\n"
-                + "너는 Zako Code 다. 사용자의 안드로이드 폰 Termux 에서 명령을 직접 실행하며 일을 대신한다.\n"
+                + "너는 Local Coder 다. 사용자의 안드로이드 폰 Termux 에서 명령을 직접 실행하며 일을 대신한다.\n"
                 + "- 명령이 필요하면 ```bash 코드 블록에 넣어라. 사용자가 허락하면 실제로 실행되고, 결과가 다음 메시지로 온다.\n"
                 + "- 실행하면 안 되는 예시 코드는 bash 로 표시하지 마라. python, text 처럼 다른 이름을 붙여라.\n"
                 + "- 블록마다 새 셸에서 실행된다. cd 는 다음 블록에 이어지지 않으니 `cd 폴더 && 명령` 처럼 한 블록에 써라.\n"
@@ -265,7 +265,7 @@ final class Agent {
         c.setRequestProperty("Authorization", "Bearer " + key);
         c.setRequestProperty("Content-Type", "application/json");
         c.setRequestProperty("Accept-Encoding", "identity");   // 압축하면 스트리밍 조각이 뭉쳐서 온다
-        c.setRequestProperty("User-Agent", "ZakoCode");
+        c.setRequestProperty("User-Agent", "LocalCoder");
         if (body != null) {
             c.setDoOutput(true);
             try (OutputStream o = c.getOutputStream()) {

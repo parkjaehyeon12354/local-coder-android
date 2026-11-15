@@ -40,13 +40,15 @@ jobs:
 
       - name: 릴리스 APK 서명 확인
         run: |
-          cp app/build/outputs/apk/release/app-release.apk ZakoCode.apk
-          "$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)/apksigner" verify --print-certs ZakoCode.apk
+          cp app/build/outputs/apk/release/app-release.apk LocalCoder.apk
+          cp LocalCoder.apk ZakoCode.apk   # 옛 이름(Zako Code) 앱은 이 이름을 찾는다
+          "$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)/apksigner" verify --print-certs LocalCoder.apk
 
       - uses: actions/upload-artifact@v4
         with:
           name: apk
           path: |
+            LocalCoder.apk
             ZakoCode.apk
             app/build/outputs/apk/debug/app-debug.apk
 
@@ -97,7 +99,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
-          gh release create "$GITHUB_REF_NAME" ZakoCode.apk
+          gh release create "$GITHUB_REF_NAME" LocalCoder.apk ZakoCode.apk
           --repo "$GITHUB_REPOSITORY"
-          --title "Zako Code $GITHUB_REF_NAME"
+          --title "Local Coder $GITHUB_REF_NAME"
           --notes "갤럭시(안드로이드)용 APK 입니다. 설치와 Termux 설정은 README 를 보세요."
